@@ -20,5 +20,7 @@ namespace DataAccessLayer.Abstract
 
         List<T> GetList(); //Listeleme
 
+        T GetByID(int id); 
+
     }
 }
