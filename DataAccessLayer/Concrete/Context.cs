@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context:DbContext
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
         //protected; Kod içinde bir değerin protected olarak tanımlanması o değere, bulunduğu class ve ondan türetilendiğer sınıflar içinde erişilebilir olduğunu göstermektedir.
 
@@ -38,5 +39,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Testimonial> Testimonials { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
+
     }
 }
