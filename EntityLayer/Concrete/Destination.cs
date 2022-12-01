@@ -35,5 +35,7 @@ namespace EntityLayer.Concrete
 
         public string Image2 { get; set; }
 
+        //ilişki -n
+        public List<Comment> Comments { get; set; }
     }
 }
