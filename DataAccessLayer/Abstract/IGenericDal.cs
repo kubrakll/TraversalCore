@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,8 @@ namespace DataAccessLayer.Abstract
 
         List<T> GetList(); //Listeleme
 
-        T GetByID(int id); 
+        T GetByID(int id);
 
+        List<T> GetListByFilter(Expression<Func<T,bool>>filter); //Şartlı listeleme
     }
 }
