@@ -82,7 +82,9 @@
 							<input type="password" asp-for="ConfirmPassword" />
 							<span asp-validation-for="ConfirmPassword" style="color:red"></span>
 						</div>
+						<div class="text-danger" asp-validation-summary="ModelOnly">
 
+						</div>
 						<label class="container">
 							<a href="#">Şartları</a> okudum. Kabul Ediyorum
 							<input type="checkbox">
