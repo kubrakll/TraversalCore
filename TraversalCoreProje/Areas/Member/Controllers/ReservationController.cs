@@ -24,21 +24,27 @@ namespace TraversalCoreProje.Areas.Member.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult MyCurrentResevation()
+        public async Task<IActionResult> MyCurrentResevation()
         {
-            return View();
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            //ViewBag.v = values.Id;
+            var valuesList = reservationManager.GetListWithReservationByAccepted(values.Id);
+            return View(valuesList);
         }
 
-        public IActionResult MyOldResevation()
+        public async Task<IActionResult> MyOldResevation()
         {
-            return View();
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            //ViewBag.v = values.Id;
+            var valuesList = reservationManager.GetListWithReservationByPrevious(values.Id);
+            return View(valuesList);
         }
 
         public async Task<IActionResult> MyApprovalReservation()
         {
             var values =await _userManager.FindByNameAsync(User.Identity.Name);
             //ViewBag.v = values.Id;
-            var valuesList=reservationManager.GetListApprovalReservation(values.Id);
+            var valuesList=reservationManager.GetListWithReservationByWaitApproval(values.Id);
             return View(valuesList);
         }
 

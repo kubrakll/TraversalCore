@@ -37,5 +37,7 @@ namespace EntityLayer.Concrete
 
         //ilişki -n
         public List<Comment> Comments { get; set; }
+
+        public List<Reservation> Reservations { get; set; }
     }
 }

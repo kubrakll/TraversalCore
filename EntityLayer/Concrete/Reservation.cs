@@ -16,12 +16,17 @@ namespace EntityLayer.Concrete
 
         public string PersonCount { get; set; } //Toplam Kişi Sayısı
 
-        public string Destination { get; set; } //Nereye olcağı
+       // public string Destination { get; set; } //Nereye olcağı
 
         public DateTime ReservationDate { get; set; } 
 
         public string Description { get; set; } 
 
         public string Status { get; set; } 
+
+
+        public int DestinationID { get; set; }
+
+        public Destination Destination { get; set; }
     }
 }
